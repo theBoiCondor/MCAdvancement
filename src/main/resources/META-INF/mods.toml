@@ -1,0 +1,27 @@
+modLoader="javafml" #mandatory
+loaderVersion="[37,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
+license="MIT License"
+# issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/" #optional
+[[mods]] #mandatory
+modId="mca" #mandatory
+version="1.0.0" #mandatory
+displayName="MC Advancement" #mandatory
+# updateJSONURL="https://change.me.example.invalid/updates.json" #optional
+# displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
+# logoFile="logo.png" #optional
+authors="Condorcrest" #optional
+description='''
+A cool description.
+'''
+[[dependencies.examplemod]] #optional
+    modId="forge" #mandatory
+    mandatory=true #mandatory
+    versionRange="[37,)" #mandatory
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.examplemod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.17.1,1.18)"
+    ordering="NONE"
+    side="BOTH"
