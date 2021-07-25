@@ -23,24 +23,24 @@ public class LoomberryBushBlock extends SweetBerryBushBlock {
     }
 
     @Override
-    public ItemStack getCloneItemStack(BlockGetter p_57256_, BlockPos p_57257_, BlockState p_57258_) {
+    public ItemStack getCloneItemStack(BlockGetter getter, BlockPos pos, BlockState state) {
         return new ItemStack(ModItems.LOOMBERRY.get());
     }
 
     @Override
-    public InteractionResult use(BlockState p_57275_, Level p_57276_, BlockPos p_57277_, Player p_57278_, InteractionHand p_57279_, BlockHitResult p_57280_) {
-        int i = p_57275_.getValue(AGE);
+    public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
+        int i = state.getValue(AGE);
         boolean flag = i == 3;
-        if (!flag && p_57278_.getItemInHand(p_57279_).is(Items.BONE_MEAL)) {
+        if (!flag && player.getItemInHand(hand).is(Items.BONE_MEAL)) {
             return InteractionResult.PASS;
         } else if (i > 1) {
-            int j = 1 + p_57276_.random.nextInt(2);
-            popResource(p_57276_, p_57277_, new ItemStack(ModItems.LOOMBERRY.get(), j + (flag ? 1 : 0)));
-            p_57276_.playSound((Player)null, p_57277_, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + p_57276_.random.nextFloat() * 0.4F);
-            p_57276_.setBlock(p_57277_, p_57275_.setValue(AGE, 1), 2);
-            return InteractionResult.sidedSuccess(p_57276_.isClientSide);
+            int j = 1 + world.random.nextInt(2);
+            popResource(world, pos, new ItemStack(ModItems.LOOMBERRY.get(), j + (flag ? 1 : 0)));
+            world.playSound((Player)null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + world.random.nextFloat() * 0.4F);
+            world.setBlock(pos, state.setValue(AGE, 1), 2);
+            return InteractionResult.sidedSuccess(world.isClientSide);
         } else {
-            return super.use(p_57275_, p_57276_, p_57277_, p_57278_, p_57279_, p_57280_);
+            return super.use(state, world, pos, player, hand, result);
         }
     }
 }

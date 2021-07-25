@@ -2,6 +2,7 @@ package condorcrest.mca.registry;
 
 import condorcrest.mca.MCAdvancement;
 import condorcrest.mca.block.LoomberryBushBlock;
+import condorcrest.mca.block.LoomingWartBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -33,8 +34,13 @@ public class ModBlocks {
     public static final RegistryObject<Block> MANGROVE_PRESSURE_PLATE = registerBlock("mangrove_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.SPRUCE_PRESSURE_PLATE)));
     public static final RegistryObject<Block> MANGROVE_BUTTON = registerBlock("mangrove_button", () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_BUTTON)));
 
-    // PLANTS
+    // LOOMING FAMILY
     public static final RegistryObject<Block> LOOMBERRY_BUSH = registerBlock("loomberry_bush", LoomberryBushBlock::new);
+    public static final RegistryObject<Block> LOOMING_NYLIUM = registerBlock("looming_nylium", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT)));
+    public static final RegistryObject<Block> LOOMSTONE = registerBlock("loomstone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistryObject<Block> GLOWING_LOOMSTONE = registerBlock("glowing_loomstone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel((light) -> {return 10;})));
+    public static final RegistryObject<Block> LOOMING_WART = registerBlock("looming_wart", LoomingWartBlock::new);
+    public static final RegistryObject<Block> LOOMING_STEM = registerBlock("looming_stem", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_STEM)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = ModBlocks.BLOCKS.register(name, block);
