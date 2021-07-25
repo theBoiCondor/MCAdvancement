@@ -6,6 +6,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -42,5 +43,10 @@ public class LoomberryBushBlock extends SweetBerryBushBlock {
         } else {
             return super.use(state, world, pos, player, hand, result);
         }
+    }
+
+    @Override
+    public void entityInside(BlockState p_57270_, Level p_57271_, BlockPos p_57272_, Entity p_57273_) {
+        super.entityInside(p_57270_, p_57271_, p_57272_, p_57273_);
     }
 }
