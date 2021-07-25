@@ -20,7 +20,7 @@ public class MCAdvancement
     public static final CreativeModeTab GROUP = new CreativeModeTab(MCAdvancement.MOD_ID) {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(ModItems.LOOMBERRY.get());
+            return new ItemStack(ModItems.LOOMBERRIES.get());
         }
     };
 

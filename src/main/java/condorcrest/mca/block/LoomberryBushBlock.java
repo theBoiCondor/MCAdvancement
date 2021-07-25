@@ -24,7 +24,7 @@ public class LoomberryBushBlock extends SweetBerryBushBlock {
 
     @Override
     public ItemStack getCloneItemStack(BlockGetter getter, BlockPos pos, BlockState state) {
-        return new ItemStack(ModItems.LOOMBERRY.get());
+        return new ItemStack(ModItems.LOOMBERRIES.get());
     }
 
     @Override
@@ -35,7 +35,7 @@ public class LoomberryBushBlock extends SweetBerryBushBlock {
             return InteractionResult.PASS;
         } else if (i > 1) {
             int j = 1 + world.random.nextInt(2);
-            popResource(world, pos, new ItemStack(ModItems.LOOMBERRY.get(), j + (flag ? 1 : 0)));
+            popResource(world, pos, new ItemStack(ModItems.LOOMBERRIES.get(), j + (flag ? 1 : 0)));
             world.playSound((Player)null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + world.random.nextFloat() * 0.4F);
             world.setBlock(pos, state.setValue(AGE, 1), 2);
             return InteractionResult.sidedSuccess(world.isClientSide);
