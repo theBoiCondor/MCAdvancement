@@ -11,9 +11,9 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.0'
-group = 'condorcrest.mca'
-archivesBaseName = 'mca'
+version = '0.0.1'
+group = 'condorcrest.mcadv'
+archivesBaseName = 'mcadv'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(16)
 
