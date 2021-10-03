@@ -15,7 +15,7 @@ import org.apache.logging.log4j.Logger;
 public class MCAdvancement
 {
     private static final Logger LOGGER = LogManager.getLogger();
-    public static final String MOD_ID = "mca";
+    public static final String MOD_ID = "mcadv";
 
     public static final CreativeModeTab GROUP = new CreativeModeTab(MCAdvancement.MOD_ID) {
         @Override
